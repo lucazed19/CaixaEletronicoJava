@@ -9,9 +9,32 @@ public class Conta {
     String criacao = "21/08/2022";
 
     public void verificarConta(){
+        int rep = 2;
+        while (rep > 1 || rep < 0){
         System.out.println("Olá, seja Bem-Vindo ao Caixa Eletrônico!");
         System.out.println("Já possui conta cadastrada?");
         System.out.println("Sim (0)   -   Não (1)");
+        int verifica = scan.nextInt();
+        System.out.println();
+        rep = verifica;
+        switch (verifica) {
+            case 0:
+                break;
+            case 1:
+                criarConta();
+                break;
+            default:
+                System.out.println("Valor inválido!\n");
+                break;
+        }
+        }
+    }
+
+    public void criarConta(){
+        inserirTitular();
+        inserirNumero();
+        inserirAgencia();
+        inserirCriacao();
     }
 
     public void operarCaixa(){
@@ -44,13 +67,6 @@ public class Conta {
         }
         }
 
-    }
-
-    public void criarConta(){
-        inserirTitular();
-        inserirNumero();
-        inserirAgencia();
-        inserirCriacao();
     }
 
     public void inserirTitular(){

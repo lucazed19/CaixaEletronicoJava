@@ -4,8 +4,6 @@ public class Caixa {
 
         conta.verificarConta();
 
-        conta.criarConta();
-
         conta.operarCaixa();
         
     }
