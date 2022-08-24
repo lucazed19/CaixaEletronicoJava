@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class Conta {
     Scanner scan = new Scanner(System.in);
-    String titular;
-    int numero;
-    String agencia;
+    String titular = "Lucas Sechirolli";
+    int numero = 123;
+    String agencia = "Santander";
     double saldo = 0;
-    String criacao;
+    String criacao = "21/08/2022";
+
+    public void verificarConta(){
+        System.out.println("Olá, seja Bem-Vindo ao Caixa Eletrônico!");
+        System.out.println("Já possui conta cadastrada?");
+        System.out.println("Sim (0)   -   Não (1)");
+    }
 
     public void operarCaixa(){
         int operando =0;
