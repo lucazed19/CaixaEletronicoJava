@@ -36,20 +36,20 @@ public class Conta {
      * <p>Caso o cliente não tiver conta, o método criarConta(); será chamado</p>
     */
     public void verificarConta(){
-        int rep = 2;
-        while (rep > 1 || rep < 0){
+        int verifica = 2;
+        while (verifica > 1 || verifica < 0){
         System.out.println("Olá, seja Bem-Vindo ao Caixa Eletrônico!");
         System.out.println("Já possui conta cadastrada?");
         System.out.println("Sim (0)   -   Não (1)");
-        int verifica = scan.nextInt();
+        verifica = scan.nextInt();
         System.out.println();
-        rep = verifica;
         switch (verifica) {
             case 0:
                 operarCaixa();
                 break;
             case 1:
                 criarConta();
+                verificarConta();
                 break;
             default:
                 System.out.println("Valor inválido!\n");
@@ -73,6 +73,7 @@ public class Conta {
         inserirNumero();
         inserirAgencia();
         inserirCriacao();
+        System.out.println("CONTA CRIADA COM SUCESSO!!\n");
     }
 
     /**<h2>operarCaixa();</h2>
