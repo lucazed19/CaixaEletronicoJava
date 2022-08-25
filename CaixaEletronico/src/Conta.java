@@ -30,32 +30,38 @@ public class Conta {
     double saldo = 10000;
     String criacao = "21/08/2022";
 
+
     /**<h2>verificarConta();</h2>
      * <p>Este método inicia o caixa eletrônico e verifica se o cliente já possui conta cadastrada.</p>
      * <p>Se o cliente já for cadastrado chamará o método operarCaixa();</p>
      * <p>Caso o cliente não tiver conta, o método criarConta(); será chamado</p>
     */
     public void verificarConta(){
-        int verifica = 2;
-        while (verifica > 1 || verifica < 0){
+        String verifica="2";
+        do{
         System.out.println("Olá, seja Bem-Vindo ao Caixa Eletrônico!");
         System.out.println("Já possui conta cadastrada?");
-        System.out.println("Sim (0)   -   Não (1)");
-        verifica = scan.nextInt();
+        System.out.println("Sim (0)   -   Não (1)  -  Sair(2)");
+        verifica = scan.next();
         System.out.println();
         switch (verifica) {
-            case 0:
+            case "0":
                 operarCaixa();
                 break;
-            case 1:
+            case "1":
                 criarConta();
                 verificarConta();
                 break;
+            case "2":
+                System.out.println("Agradeço pela presença!");
+                break;
             default:
                 System.out.println("Valor inválido!\n");
+                verificarConta();
                 break;
         }
-        }
+        break;
+        }while (!verifica.equals("2"));
     }
 
     /**<h2>criarConta();</h2>
@@ -88,27 +94,26 @@ public class Conta {
      * </ul>
     */
     public void operarCaixa(){
-        int operando =0;
-        while (operando != 4){
+        String operacao = "0";
+        while (!operacao.equals("4")){
         System.out.println("Bem-Vindo, "+titular+". Qual operação deseja realizar?");
         System.out.println("Depositar (0)  -  Sacar (1)  -  Calcular Saldo (2)  -  Informações(3)  -  Sair(4)");
-        int operacao = scan.nextInt();
-        operando = operacao;
+        operacao = scan.next();
         System.out.println();
         switch (operacao) {
-            case 0:
+            case "0":
                 depositar();
                 break;
-            case 1:
+            case "1":
                 sacar();
                 break;
-            case 2:
+            case "2":
                 calcularSaldo();
                 break;
-            case 3:
+            case "3":
                 informacoesConta();
                 break;
-            case 4:
+            case "4":
                 System.out.println("Agradeço pela presença, "+titular+"!\n");
                 break;
             default:
