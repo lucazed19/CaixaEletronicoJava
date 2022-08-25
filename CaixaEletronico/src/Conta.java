@@ -32,17 +32,16 @@ public class Conta {
 
 
     /**<h2>verificarConta();</h2>
-     * <p>Este método inicia o caixa eletrônico e verifica se o cliente já possui conta cadastrada.</p>
+     * <p>Este método inicia o caixa eletrônico e verifica se o cliente já possui conta cadastrada ou se deseja sair do caixa.</p>
      * <p>Se o cliente já for cadastrado chamará o método operarCaixa();</p>
      * <p>Caso o cliente não tiver conta, o método criarConta(); será chamado</p>
+     * <p>Caso o cliente deseja sair o programa será encerrado</p>
     */
     public void verificarConta(){
-        String verifica="2";
-        do{
         System.out.println("Olá, seja Bem-Vindo ao Caixa Eletrônico!");
         System.out.println("Já possui conta cadastrada?");
         System.out.println("Sim (0)   -   Não (1)  -  Sair(2)");
-        verifica = scan.next();
+        String verifica = scan.next();
         System.out.println();
         switch (verifica) {
             case "0":
@@ -60,9 +59,7 @@ public class Conta {
                 verificarConta();
                 break;
         }
-        break;
-        }while (!verifica.equals("2"));
-    }
+        }
 
     /**<h2>criarConta();</h2>
      * <p>Este método serve para criar uma conta bancária.</p>
