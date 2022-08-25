@@ -3,8 +3,6 @@ public class Caixa {
         Conta conta = new Conta();
 
         conta.verificarConta();
-
-        conta.operarCaixa();
         
     }
 }
